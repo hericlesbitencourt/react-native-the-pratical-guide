@@ -1,9 +1,13 @@
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
-import {} from './screens/CategoriesScreen'
+import {CategoriesScreen} from './screens/CategoriesScreen'
 
 export default function App() {
   return (
-    <CategoryScreen />
+    <>
+    <StatusBar style="light" />
+    <CategoriesScreen />
+    </>
   );
 }
 
