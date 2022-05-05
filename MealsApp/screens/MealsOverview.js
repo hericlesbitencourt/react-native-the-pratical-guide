@@ -1,17 +1,17 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from "react-native";
 
-
-export const MealsOverview = () => {
+export const MealsOverview = ({ route }) => {
+  const categoryId = route.params.categoryId;
   return (
     <View style={styles.container}>
-      <Text>MealsOverview</Text>
+      <Text>MealsOverview - {categoryId}</Text>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 16
-    }
-})
+  container: {
+    flex: 1,
+    padding: 16,
+  },
+});
