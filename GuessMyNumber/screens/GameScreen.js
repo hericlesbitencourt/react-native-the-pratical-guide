@@ -1,9 +1,7 @@
-import React from 'react'
+import { Text } from "react-native";
 
-function GameScreen() {
+export function GameScreen() {
   return (
-    <div>GameScreen</div>
+    <Text>Game Screen</Text>
   )
 }
-
-export default GameScreen
