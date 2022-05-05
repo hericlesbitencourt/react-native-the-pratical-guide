@@ -1,5 +1,6 @@
-import { StyleSheet, View, Dimensions } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Colors } from "../../constants/colors";
+import { deviceWidth } from "../../constants/deviceWidth";
 
 export function Card({children}) {
   return (
@@ -8,8 +9,6 @@ export function Card({children}) {
     </View>
   )
 }
-
-const deviceWidth = Dimensions.get('window').width
 
 const styles = StyleSheet.create({
     card: {

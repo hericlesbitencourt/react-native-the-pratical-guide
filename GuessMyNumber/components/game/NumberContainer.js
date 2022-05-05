@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, Dimensions } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { Colors } from "../../constants/colors";
+import { deviceWidth } from "../../constants/deviceWidth";
 
 export function NumberContainer({children}) {
   return (
@@ -8,8 +9,6 @@ export function NumberContainer({children}) {
     </View>
   )
 }
-
-const deviceWidth = Dimensions.get('window').width
 
 const styles = StyleSheet.create({
     container: {
