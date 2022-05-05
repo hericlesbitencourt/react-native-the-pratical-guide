@@ -17,6 +17,10 @@ export default function App() {
     ]);
   }
 
+  function deleteGoalHandler() {
+
+  }
+
   return (
     <View style={styles.appContainer}>
       <GoalInput onAddGoal={addGoalHandler} />
@@ -25,7 +29,7 @@ export default function App() {
           data={courseGoals}
           renderItem={(itemData) => {
             return (
-              <GoalItem text={itemData.item.text} />
+              <GoalItem text={itemData.item.text} onDeleteItem={deleteGoalHandler} />
             );
           }}
           keyExtractor={(item, index) => {
