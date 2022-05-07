@@ -1,6 +1,5 @@
 import { StyleSheet, View } from 'react-native';
 import { GlobalStyles } from '../../constants/styles';
-import { initialState } from '../../store/expenses-context';
 import { ExpensesList } from './ExpensesList';
 import { ExpensesSummary } from './ExpensesSummary';
 
@@ -8,8 +7,8 @@ import { ExpensesSummary } from './ExpensesSummary';
 export function ExpensesOutput({ expenses, expensesPeriod }) {
   return (
     <View style={styles.container}>
-      <ExpensesSummary expenses={initialState} periodName={expensesPeriod} />
-      <ExpensesList expenses={initialState} />
+      <ExpensesSummary expenses={expenses} periodName={expensesPeriod} />
+      <ExpensesList expenses={expenses} />
     </View>
   );
 }
