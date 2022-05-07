@@ -13,7 +13,13 @@ export function RecentExpenses() {
     return expense.date > date7DaysAgo;
   });
 
-  return <ExpensesOutput expenses={recentExpenses} expensesPeriod='Last 7 days' />;
+  return (
+    <ExpensesOutput
+      expenses={recentExpenses}
+      expensesPeriod='Last 7 days'
+      fallbackText='No expenses register for the last 7 days.'
+    />
+  );
 }
 
 const styles = StyleSheet.create({});
