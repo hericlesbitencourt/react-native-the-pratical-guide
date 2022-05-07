@@ -4,9 +4,9 @@ import { GlobalStyles } from '../../constants/styles';
 import { getFormattedDate } from '../../util/date';
 
 export function ExpenseItem({ description, amount, date }) {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   function expensePressHandler() {
-    navigation.navigate('ManageExpense')
+    navigation.navigate('ManageExpense', { expenseId: id });
   }
 
   return (
