@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
- function AllExpenses() {
+export function AllExpenses() {
   return (
     <View>
       <Text>AllExpenses</Text>
