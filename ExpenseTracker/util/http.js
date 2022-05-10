@@ -7,7 +7,7 @@ export async function storeExpense(expenseData) {
   const response = await axios.post(BASE_URL + '/expenses.json', expenseData);
 
   const id = response.data.name;
-  
+
   return id;
 }
 
@@ -27,4 +27,12 @@ export async function fetchExpenses() {
   }
 
   return expenses;
+}
+
+export function updateExpense(id, expenseData) {
+  return axios.put(BASE_URL + `/expenses/${id}.json`, expenseData);
+}
+
+export function deleteExpense(id) {
+  return axios.delete(BASE_URL + `/expenses/${id}.json`);
 }
