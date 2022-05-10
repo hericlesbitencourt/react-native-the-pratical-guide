@@ -4,7 +4,7 @@ const API_KEY = 'AIzaSyDPVhqPjfPtBKlTL81KGEG73kYNtagLac4';
 
 export async function createUser(email, password) {
   const response = await axios.post(
-    'https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=' +
+    'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' +
       API_KEY,
     {
       email: email,
@@ -12,4 +12,5 @@ export async function createUser(email, password) {
       returnSecureToken: true,
     }
   );
+  
 }
