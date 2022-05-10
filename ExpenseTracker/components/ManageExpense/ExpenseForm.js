@@ -25,7 +25,8 @@ export function ExpenseForm({
       isValid: true,
     },
   });
-  function inputChangeHandler(inputIdentifier, enteredValue) {
+
+  function inputChangeHandler(inputIdentifier, enteredValue, test) {
     setInputs((currentInputValues) => {
       return {
         ...currentInputValues,
@@ -50,7 +51,7 @@ export function ExpenseForm({
       setInputs((currentInputValues) => {
         return {
           amount: {
-            value: currentInputValues.amount.value,
+            value: +currentInputValues.amount.value,
             isValid: amountIsValid,
           },
           date: { value: currentInputValues.date.value, isValid: dateIsValid },
@@ -80,7 +81,7 @@ export function ExpenseForm({
           invalid={!inputs.amount.isValid}
           textInputConfig={{
             keyboardType: 'decimal-pad',
-            onChange: inputChangeHandler.bind(this, 'amount'),
+            onChangeText: inputChangeHandler.bind(this, 'amount'),
             value: inputs.amount.value,
           }}
         />
@@ -91,7 +92,7 @@ export function ExpenseForm({
           textInputConfig={{
             placeholder: 'YYYY-MM-DD',
             maxLength: 10,
-            onChange: inputChangeHandler.bind(this, 'date'),
+            onChangeText: inputChangeHandler.bind(this, 'date'),
             value: inputs.date.value,
           }}
         />
@@ -103,12 +104,14 @@ export function ExpenseForm({
           multiline: true,
           //   autoCapitalize: 'none',
           //   autoCorrect: false, // default is true,
-          onChange: inputChangeHandler.bind(this, 'description'),
+          onChangeText: inputChangeHandler.bind(this, 'description'),
           value: inputs.description.value,
         }}
       />
       {formIsInvalid && (
-        <Text style={styles.errorText}>Invalid input values - please check your entered data!</Text>
+        <Text style={styles.errorText}>
+          Invalid input values - please check your entered data!
+        </Text>
       )}
       <View style={styles.buttons}>
         <Button style={styles.button} mode='flat' onPress={onCancel}>
@@ -141,9 +144,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   errorText: {
-      textAlign: 'center',
-      color: GlobalStyles.colors.error500,
-      margin: 8
+    textAlign: 'center',
+    color: GlobalStyles.colors.error500,
+    margin: 8,
   },
   buttons: {
     flexDirection: 'row',
