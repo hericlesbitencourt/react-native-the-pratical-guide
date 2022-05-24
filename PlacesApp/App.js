@@ -7,7 +7,7 @@ import { Colors } from './constants/colors';
 import AddPlace from './screens/AddPlace';
 import AllPlaces from './screens/AllPlaces';
 import Map from './screens/Map';
-import { init } from './utils/databae';
+import { init } from './utils/database';
 import AppLoading from 'expo-app-loading';
 
 const Stack = createNativeStackNavigator();
