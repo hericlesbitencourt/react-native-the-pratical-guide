@@ -71,14 +71,38 @@ export function fetchPlaces() {
           const places = [];
           for (const dp of result.rows._array) {
             places.push(
-              new Place(dp.title, dp.imageUri, {
-                address: dp.address,
-                latitude: dp.latitude,
-                longitude: dp.longitude,
-              }, dp.id)
+              new Place(
+                dp.title,
+                dp.imageUri,
+                {
+                  address: dp.address,
+                  latitude: dp.latitude,
+                  longitude: dp.longitude,
+                },
+                dp.id
+              )
             );
           }
           resolve(places);
+        },
+        (_, error) => {
+          reject(error);
+        }
+      );
+    });
+  });
+
+  return promise;
+}
+
+export function fetchPlaceDetails(id) {
+  const promise = new Promise((resolve, reject) => {
+    database.transaction((tx) => {
+      tx.executeSql(
+        `SELECT * FROM places WHERE id = ?`,
+        [id],
+        (_, result) => {
+          resolve(result.rows._array[0]);
         },
         (_, error) => {
           reject(error);
