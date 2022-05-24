@@ -4,10 +4,8 @@ import { insertPlace } from '../utils/database';
 
 export default function AddPlace({ navigation }) {
   async function createPlaceHandler(place) {
-    await insertPlace(place)
-    navigation.navigate('AllPlaces', {
-      place: place,
-    });
+    await insertPlace(place);
+    navigation.navigate('AllPlaces');
   }
   return <PlaceForm onCreatePlace={createPlaceHandler} />;
 }
