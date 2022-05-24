@@ -6,7 +6,12 @@ import { fetchPlaceDetails } from '../utils/database';
 
 export default function PlaceDetails({ navigation, route }) {
   const [fetchedPlace, setFetchedPlace] = useState();
-  function showOnMapHandler() {}
+  function showOnMapHandler() {
+    navigation.navigate('Map', {
+      initialLatitude: fetchedPlace.location.latitude,
+      initialLongitude: fetchedPlace.location.longitude,
+    });
+  }
 
   const selectedPlaceId = route.params.placeId;
 
