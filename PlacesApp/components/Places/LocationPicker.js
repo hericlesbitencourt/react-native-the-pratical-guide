@@ -7,7 +7,7 @@ import {
 } from 'expo-location';
 import { Colors } from '../../constants/colors';
 import OutlinedButton from '../UI/OutlinedButton';
-import { getMapPreview } from '../../utils/location';
+import { getAddress, getMapPreview } from '../../utils/location';
 import {
   useNavigation,
   useRoute,
@@ -33,7 +33,14 @@ export default function LocationPicker({ onPickLocation }) {
   }, [route, isFocused]);
 
   useEffect(() => {
-    onPickLocation(pickedLocation);
+    async function handleLocation() {
+      if (pickedLocation) {
+        getAddress(pickedLocation.latitude, pickedLocation.longitude);
+        onPickLocation({...pickedLocation, address: address});
+      }
+    }
+
+    handleLocation();
   }, [pickedLocation, onPickLocation]);
 
   async function verifyPermissions() {
