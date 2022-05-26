@@ -10,11 +10,11 @@ Use of React Native and React knowledge to build native iOS and Android Apps.
 * **Flexbox in React Native** and **CSS in JS**.
 * Debugging and tools used in React Native.
 * **Firebase authentication** in React Native and the use of libraries and SDK.
-* **Device Platform individual features**, both iOS and Android
-* All Workflows present in React Native ecosystem (Expo, Bare, CLI).
-* Publish the app Google Play Store and App Store.
+* **Device Platform individual features**, both in iOS and Android
+* All Workflows present in React Native ecosystem **(Expo, Bare, CLI)**.
+* Publish the app into **Google Play Store** and **App Store**.
 * Push and Local Notifications.
-* JavaScript and React Refresh concepts.
+* Refresh of **JavaScript** and **React** concepts.
 
 The majority of the course was taken using Expo and it's environment.
 
